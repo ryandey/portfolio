@@ -6,11 +6,8 @@ const Hero = () => {
     <StyledHero>
       <div className="content">
         <h1>Hi, I'm Ryan, a <span>React Developer</span> based out of Jacksonville, FL.</h1>
-        <StyledCta>
-          <a href="#work" className="link-text">
-            <div className="block">{'>'}</div>
-            <p>View my work</p>
-          </a>
+        <StyledCta href="#work" className="link-text">
+          {'>'} View my work
         </StyledCta>
         
       </div>
@@ -21,7 +18,6 @@ const Hero = () => {
 const StyledHero = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
   height: 50vh;
   justify-content: center;
 
@@ -31,39 +27,49 @@ const StyledHero = styled.div`
 
   .content span {
     color: var(--color-accent);
-    filter: brightness(200%);
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding: 0 5rem;
+
+    .content {
+      max-width: 100%
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 1rem; 
+
+    .content h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .link-text {
+      max-width: 100%;
+      padding: 1.5rem 2rem;
+    }
   }
 `
 
-const StyledCta = styled.div`
+const StyledCta = styled.a`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: 170px;
+  max-width: 25%;
   transition: all 0.2s ease;
-
-  a .block {
-    background: var(--color-accent);
-    display: flex;
-    width: 35px;
-    height: 35px;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease;
-  }
+  background: var(--color-accent);
+  padding: .75rem .5rem;
 
   &:hover {
+    transform: translateY(-5px);
     cursor: pointer;
-
-    a .block {
-      background: white;
-      color: var(--color-accent);
-    }
-
-    a p {
-      padding-left: 1rem;
-    }
+    color: white;
+    background-color: var(--color-accent-hover);
+    -webkit-box-shadow: 0 10px 35px var(--color-accent-shadow); 
+    box-shadow: 0 10px 35px var(--color-accent-shadow);
   }
 `
 

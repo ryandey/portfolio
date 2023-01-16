@@ -35,34 +35,29 @@ const StyledNavbar = styled.nav`
   align-items: center;
   justify-content: center;
   height: 60px;
-  width: 100%;
 `
 
 const StyledNavContainer = styled.div`
-  margin: auto 0;
-  display: flex;
-  max-width: 1440px;
-  flex-direction: row;
+  display: grid;
   height: 100%;
-  justify-content: space-between;
-  align-items: center;
+  max-width: 1600px;
   margin: auto 0;
+  grid-template-columns: 70% 30%;
 `
 
 const StyledLogoContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding-right: 1rem;
 `
 
 const StyledLogo = styled.img`
+  grid-column: 1;
   width: 55px;
 `
 
 const StyledLinks = styled.div`
+  grid-column: 1;
   display: flex;
+  flex-grow: 1;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -76,12 +71,12 @@ const StyledLink = styled.a`
 `
 
 const StyledButtonContainer = styled.div`
+  grid-column: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 9%;
-  max-width: 120px;
+  width: 8rem;
 `
 
 const ContactButton = styled.button`
