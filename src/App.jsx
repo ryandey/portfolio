@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import Projects from './components/Projects'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
 
       <main className="container">
         <Hero />
+        <Projects />
       </main>
     </div>
   )

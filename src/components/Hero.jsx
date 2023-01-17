@@ -1,32 +1,59 @@
 import React from 'react'
 import styled from 'styled-components'
+import myLogo from '../assets/logo.svg'
 
 const Hero = () => {
   return (
     <StyledHero>
+      {/* Logo */}
+      <StyledLogo>
+        <img src={myLogo} alt="Ryan Dey Logo" />
+      </StyledLogo>
+
+      {/* CTA */}
       <div className="content">
         <h1>Hi, I'm Ryan, a <span>React Developer</span> based out of Jacksonville, FL.</h1>
+
+        {/* Button */}
         <StyledCta href="#work" className="link-text">
-          {'>'} View my work
+          See my work
         </StyledCta>
-        
       </div>
     </StyledHero>
   )
 }
 
-const StyledHero = styled.div`
+const StyledLogo = styled.div`
+  display: flex;
+  margin-bottom: 3rem;
+
+  img {
+    width: 100px;
+  }
+`
+
+const StyledHero = styled.main`
   display: flex;
   flex-direction: column;
   height: 50vh;
   justify-content: center;
+  align-items: center;
 
   .content {
     max-width: 60%;
+    font-family: 'Rubik', sans-serif;
   }
 
   .content span {
     color: var(--color-accent);
+  }
+
+  .content h1 {
+    margin-bottom: 4rem;
+  }
+
+  ${StyledLogo} {
+    display: none;
   }
 
   @media screen and (max-width: 1280px) {
@@ -35,20 +62,27 @@ const StyledHero = styled.div`
     .content {
       max-width: 100%
     }
+
+    .content h1 {
+      margin-bottom: 4rem;
+    }
   }
 
   @media screen and (max-width: 768px) {
-    padding: 0 1rem; 
+    padding: 0 2rem; 
 
     .content h1 {
       font-size: 2.5rem;
-      text-align: center;
       margin-bottom: 4rem;
     }
 
     .link-text {
       max-width: 100%;
       padding: 1.5rem 2rem;
+    }
+
+    ${StyledLogo} {
+      display: unset;
     }
   }
 `
@@ -62,6 +96,7 @@ const StyledCta = styled.a`
   transition: all 0.2s ease;
   background: var(--color-accent);
   padding: .75rem .5rem;
+  text-transform: uppercase;
 
   &:hover {
     transform: translateY(-5px);

@@ -62,7 +62,7 @@ const StyledLogo = styled.li`
   width: 100%;
 
   img {
-    width: 50px;
+    width: 45px;
   }
 `
 
