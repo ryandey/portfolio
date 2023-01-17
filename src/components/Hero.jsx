@@ -69,7 +69,7 @@ const StyledHero = styled.main`
   }
 
   @media screen and (max-width: 768px) {
-    padding: 0 2rem; 
+    padding: 0 .5rem; 
 
     .content h1 {
       font-size: 2.5rem;
@@ -82,7 +82,8 @@ const StyledHero = styled.main`
     }
 
     ${StyledLogo} {
-      display: unset;
+      display: block;
+      margin-top: 10rem;
     }
   }
 `
